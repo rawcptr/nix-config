@@ -102,7 +102,6 @@
     automatic = true;
     dates = "daily";
     options = "--delete-older-than 10d";
-    auto-optimise-store = true;
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
