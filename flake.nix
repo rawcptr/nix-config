@@ -29,9 +29,20 @@
 			specialArgs = { inherit inputs; };
 			
 			modules = [
-				./configuration.nix
-				./hardware-configuration.nix
-				./cachix.nix
+				./configuration.nix # for os version
+				./hardware-configuration.nix # for hardware
+				
+				./bootloader.nix # boot config
+				./networking.nix # networking config
+				./filesystem.nix # mounts
+				./locale.nix # locale: utf-8 en-US asia/kolkata
+				./users.nix  # users 
+				./graphics.nix # NVIDIA settings
+				./nix-package-manager.nix # nix pkg manager config
+				./services.nix # ssh, upgrade, and cleanup
+				./packages.nix # system packages
+
+				./cachix.nix # for cachix 
 			];
 		};
 	};
