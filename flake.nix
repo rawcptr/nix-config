@@ -1,50 +1,70 @@
+# /flake.nix
 {
-	description = "NixOS System Configuration";
-	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-		
-		# home manager
-		home-manager.url = "github:nix-community/home-manager";
-		home-manager.inputs.nixpkgs.follows = "nixpkgs";
-		
-		# zen-browser
-		zen-browser.url = "github:youwen5/zen-browser-flake";
-		zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+  description = "Multi-system Nix Configuration";
 
-		# hyprland
-		hyprland.url = "github:hyprwm/Hyprland";
-	};
-	
-	outputs = { self, nixpkgs, zen-browser, ... }@inputs:
-	let
-		system = "x86_64-linux"; 
-		pkgs = import nixpkgs {
-			inherit system;
-			config.allowUnfree = true;
-		};
-	in
-	{
-		nixosConfigurations."nixos" = nixpkgs.lib.nixosSystem {
-			inherit system pkgs;
-			specialArgs = { inherit inputs; };
-			
-			modules = [
-				./configuration.nix # for os version
-				./hardware-configuration.nix # for hardware
-				
-				./bootloader.nix # boot config
-				./networking.nix # networking config
-				./filesystem.nix # mounts
-				./locale.nix # locale: utf-8 en-US asia/kolkata
-				./users.nix  # users 
-				./graphics.nix # NVIDIA settings
-				./nix-package-manager.nix # nix pkg manager config
-				./services.nix # ssh, upgrade, and cleanup
-				./packages.nix # system packages
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland = { url = "github:hyprwm/Hyprland"; };
+    zen-browser = { 
+        url = "github:youwen5/zen-browser-flake";
+        inputs.nixpkgs.follows = "nixpkgs"; 
+    }; 
+    # Add nix-darwin input when ready
+  };
 
-				./cachix.nix # for cachix 
-			];
-		};
-	};
-}
-		
+  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  let
+    # Define supported systems
+    systems = ["x86_64-linux" /* , "aarch64-darwin" */ ];
+    forAllSystems = nixpkgs.lib.genAttrs systems;
+
+    # Create pkgs set for each system
+    pkgsFor = forAllSystems (system: import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+      # overlays = [ ... ];
+    });
+
+    # Define specialArgs to pass inputs down
+    specialArgs = { inherit inputs; };
+
+  in
+  {
+    # NixOS Configurations
+    nixosConfigurations."nixos-desktop" = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      inherit specialArgs;
+      pkgs = pkgsFor."x86_64-linux";
+      modules = [
+        # === Only import the host's main entry point ===
+        ./hosts/nixos-desktop/default.nix
+
+        # === Optional: Add Home Manager module here ===
+         # home-manager.nixosModules.home-manager
+         # {
+         #   home-manager.useGlobalPkgs = true;
+         #   home-manager.useUserPackages = true;
+         #   # Adapt this path when you set up Home Manager config files
+         #   home-manager.users.nths = import ./home/user-nths.nix;
+         #   home-manager.extraSpecialArgs = specialArgs;
+         # }
+      ];
+    };
+
+    # Darwin Configurations (Placeholder)
+    # darwinConfigurations."macbook" = nix-darwin.lib.darwinSystem {
+    #   system = "aarch64-darwin"; # Or x86_64-darwin
+    #   inherit specialArgs;
+    #   pkgs = pkgsFor."aarch64-darwin"; # Adjust system name
+    #   modules = [
+    #     ./hosts/macbook/default.nix # Entry point for macbook host
+    #     # home-manager.darwinModules.home-manager
+    #     # { ... home manager config ... }
+    #   ];
+    # };
+  };
+}	
