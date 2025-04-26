@@ -80,6 +80,7 @@
     gcc
     clang
     llvm
+    inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
