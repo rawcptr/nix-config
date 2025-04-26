@@ -81,6 +81,8 @@
     hyprland
     ghostty
     fastfetch
+    uv 
+    wl-clipboard
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
