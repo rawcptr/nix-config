@@ -82,7 +82,7 @@
     llvm
     nushell
     hyprland
-    kitty
+    ghostty
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
