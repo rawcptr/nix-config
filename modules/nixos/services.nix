@@ -5,10 +5,10 @@
 {
   # Automatic Updating
   system.autoUpgrade = {
-    enable = true;
-    dates = "weekly";
+    enable = false;
+    # dates = "weekly";
     # channel = "https://nixos.org/channels/nixos-unstable"; 
-    flake = "/etc/nixos"; # Tell autoUpgrade to update the flake inputs
+    # flake = "/etc/nixos"; # Tell autoUpgrade to update the flake inputs
   };
 
   # Enable the OpenSSH daemon.
