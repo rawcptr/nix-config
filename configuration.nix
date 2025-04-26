@@ -54,7 +54,7 @@
     description = "Mustafa";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
-    # shell = pkgs.nushell; # set nushell as default shell
+    shell = pkgs.nushell; # set nushell as default shell
   };
 
   # Enable automatic login for the user.
@@ -80,6 +80,7 @@
     gcc
     clang
     llvm
+    nushell
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
@@ -102,7 +103,11 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings = {
+    experimental-features = ["nix-command" "flakes"];
+    substituters = ["https://hyperland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVl3/pzj6jIBMioiJM7ypFP8wtkuGc="];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
