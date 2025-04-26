@@ -61,7 +61,7 @@
   services.getty.autologinUser = "nths";
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true; # configured in flake.nix
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
