@@ -1,5 +1,5 @@
 # /etc/nixos/services.nix
-# Configures system services like SSH, auto-updates, and garbage collection.
+# Configures system services like SSH, and garbage collection.
 { config, pkgs, lib, inputs, ... }:
 
 {
@@ -11,13 +11,6 @@
     flake = "/etc/nixos"; # Tell autoUpgrade to update the flake inputs
   };
 
-  # Automatic Garbage Collection
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 10d";
-  };
-
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
@@ -26,6 +19,9 @@
     #   PasswordAuthentication = false; # Recommended if using SSH keys
     # };
   };
+
+  # Start SSH agent.
+  programs.ssh.startAgent = true;
 
   # Other services:
   # Enable CUPS to print documents.
