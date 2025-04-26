@@ -60,9 +60,6 @@
   # Enable automatic login for the user.
   services.getty.autologinUser = "nths";
 
-  # Allow unfree packages
-  # nixpkgs.config.allowUnfree = true; # configured in flake.nix
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -94,6 +91,17 @@
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
+  # Automatic updating
+  system.autoUpgrade = {
+    enable = true;
+    dates = "weekly";
+  };
+  nix.gc = {
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than 10d";
+    auto-optimise-store = true;
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -121,12 +129,13 @@
   hardware.graphics = {
     enable = true;
   };
+
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
     powerManagement.enable = false;
     powerManagement.finegrained = false;
-    open = true;
+    open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
