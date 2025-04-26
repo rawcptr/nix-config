@@ -83,6 +83,7 @@
     nushell
     hyprland
     ghostty
+    fastfetch
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
