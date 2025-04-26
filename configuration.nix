@@ -81,11 +81,11 @@
     clang
     llvm
     nushell
-    hyprland
+    # hyprland
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
-  programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -109,8 +109,8 @@
 
   nix.settings = {
     experimental-features = ["nix-command" "flakes"];
-    substituters = ["https://hyperland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8wtkuGc="];
+    # substituters = ["https://hyperland.cachix.org"];
+    # trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8wtkuGc="];
   };
 
   # This value determines the NixOS release from which the default

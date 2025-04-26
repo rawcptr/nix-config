@@ -28,6 +28,7 @@
 			modules = [
 				./configuration.nix
 				./hardware-configuration.nix
+				./cachix.nix
 			];
 		};
 	};
