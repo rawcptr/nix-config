@@ -10,6 +10,9 @@
 		# zen-browser
 		zen-browser.url = "github:youwen5/zen-browser-flake";
 		zen-browser.inputs.nixpkgs.follows = "nixpkgs";
+
+		# hyprland
+		hyprland.url = "github:hyprwm/Hyprland";
 	};
 	
 	outputs = { self, nixpkgs, zen-browser, ... }@inputs:
