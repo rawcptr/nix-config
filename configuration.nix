@@ -81,6 +81,7 @@
     clang
     llvm
     nushell
+    hyprland
     inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
