@@ -11,7 +11,7 @@ in
     home.stateVersion = "25.05"; 
     
     imports = [
-	# ./shared/nushell.nix
+	./shared/nushell.nix
 	./shared/packages.nix
     ];
 
