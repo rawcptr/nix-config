@@ -1,0 +1,3 @@
+[submodule "home/shared/nvim-config"]
+	path = home/shared/nvim-config
+	url = https://github.com/NvChad/starter.git

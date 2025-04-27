@@ -18,6 +18,13 @@ in
     # basic config
     programs.home-manager.enable = true;
 
+    # nvim config
+    home.file.".config/nvim" = {
+	source = ./shared/nvim-config;
+	recursive = true;
+	force = true;
+    };
+
     # xdg config
     xdg.enable = true;
     xdg.userDirs = {
