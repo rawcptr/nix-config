@@ -8,11 +8,10 @@ in
     home.homeDirectory = "/home/${username}"; 
 
 
-    home.stateVersion = config.system.stateVersion; # inherit from nixOS
+    home.stateVersion = "25.05"; 
     
-    # 
     imports = [
-	./shared/nushell.nix
+	# ./shared/nushell.nix
 	./shared/packages.nix
     ];
 
