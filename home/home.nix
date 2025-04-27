@@ -9,9 +9,7 @@ in
     home.stateVersion = "25.05";
 
     imports = [
-        ./shared/nushell.nix
-        ./shared/packages.nix
-        ./shared/nvim.nix
+        ./shared
         ./nixos
     ];
 

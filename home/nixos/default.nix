@@ -5,8 +5,8 @@ in
 lib.mkIf isLinux {
 
     xdg.configFile = {
-        "~/.config/hypr/hyprland.conf" = {
-            source = ./hypr/conf/hyprland.conf;
+        "./hypr/hyprland.conf" = {
+            source = ./configs/hyprland.conf;
         };
     };
 
