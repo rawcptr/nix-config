@@ -1,12 +1,6 @@
 # /modules/shared/nix.nix
 # Configures common Nix package manager settings.
-{
-    config,
-    pkgs,
-    lib,
-    inputs,
-    ...
-}:
+{ ... }:
 
 {
     nix.settings = {

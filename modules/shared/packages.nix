@@ -1,12 +1,6 @@
-# /etc/nixos/packages.nix
+# /modules/shared/packages.nix
 # Defines system-wide packages installed in the environment profile.
-{
-    config,
-    pkgs,
-    lib,
-    inputs,
-    ...
-}: # Needs pkgs and inputs
+{ pkgs, ... }: # Needs pkgs and inputs
 
 {
     environment.systemPackages = with pkgs; [

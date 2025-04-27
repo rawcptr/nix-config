@@ -1,11 +1,4 @@
-{
-    pkgs,
-    lib,
-    config,
-    inputs,
-    system,
-    ...
-}:
+{ ... }:
 
 let
     username = "nths";

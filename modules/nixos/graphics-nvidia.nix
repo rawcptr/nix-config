@@ -1,12 +1,11 @@
-# /etc/nixos/graphical.nix
+# /modules/nixos/graphical.nix
 # Configures Hyprland, Wayland, NVIDIA drivers, and related graphical settings.
 {
     config,
     pkgs,
-    lib,
     inputs,
     ...
-}: # Needs config, pkgs, inputs
+}:
 
 {
     # Enable Hyprland Wayland compositor

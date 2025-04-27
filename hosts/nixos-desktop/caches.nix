@@ -1,12 +1,7 @@
 # /hosts/nixos-desktop/caches.nix
 # This module imports the specific binary cache configurations
 # that should be active for the 'nixos-desktop' host.
-{
-    pkgs,
-    lib,
-    config,
-    ...
-}: # Standard module header
+{ ... }: # Standard module header
 
 {
     imports = [

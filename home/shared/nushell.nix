@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ ... }:
 
 {
     programs.nushell = {
@@ -21,5 +21,4 @@
             };
         };
     };
-    # home.shell = pkgs.nushell; # enabling this causes error
 }

@@ -1,12 +1,6 @@
-# /etc/nixos/locale.nix
+# /modules/shared/locale.nix
 # Sets time zone, locale, and keyboard layout.
-{
-    config,
-    pkgs,
-    lib,
-    inputs,
-    ...
-}:
+{ ... }:
 
 {
     # Set your time zone.

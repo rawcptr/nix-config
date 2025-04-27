@@ -1,10 +1,9 @@
-# /etc/nixos/users.nix
+# /modules/shared/users.nix
 # Defines user accounts and related settings like default shell and auto-login.
 {
     config,
     pkgs,
     lib,
-    inputs,
     ...
 }: # Needs pkgs for pkgs.nushell
 

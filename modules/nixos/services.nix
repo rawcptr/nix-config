@@ -1,12 +1,6 @@
-# /etc/nixos/services.nix
+# /modules/nixos/services.nix
 # Configures system services like SSH, and garbage collection.
-{
-    config,
-    pkgs,
-    lib,
-    inputs,
-    ...
-}:
+{ ... }:
 
 {
     # Automatic Updating

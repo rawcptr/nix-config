@@ -1,12 +1,6 @@
-# /etc/nixos/bootloader.nix
+# /modules/nixos/bootloader.nix
 # Defines bootloader settings.
-{
-    config,
-    pkgs,
-    lib,
-    inputs,
-    ...
-}:
+{ ... }:
 
 {
     boot.loader.systemd-boot.enable = true;

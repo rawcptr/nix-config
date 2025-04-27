@@ -1,12 +1,6 @@
 # /modules/nixos/networking.nix
 # Configures NixOS-specific network management. Hostname is set per-host.
-{
-    config,
-    pkgs,
-    lib,
-    inputs,
-    ...
-}:
+{ lib, ... }:
 
 {
     # Hostname is now defined in hosts/nixos-desktop/default.nix

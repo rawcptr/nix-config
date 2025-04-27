@@ -1,13 +1,7 @@
 # ./home/shared/nvim.nix
 # Home Manager module for Neovim (NvChad) configuration
 
-{
-    pkgs,
-    lib,
-    config,
-    inputs,
-    ...
-}:
+{ pkgs, inputs, ... }:
 
 {
     imports = [
