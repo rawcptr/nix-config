@@ -1,10 +1,5 @@
 # /etc/nixos/filesystems.nix
-{
-    config,
-    pkgs,
-    lib,
-    ...
-}:
+{ ... }:
 
 let
     # Define user/group IDs centrally if needed.

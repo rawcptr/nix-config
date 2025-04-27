@@ -1,12 +1,6 @@
 # /hosts/nixos-desktop/default.nix
 # Main configuration entry point for the 'nixos-desktop' host.
-{
-    inputs,
-    pkgs,
-    lib,
-    config,
-    ...
-}:
+{ ... }:
 {
     imports = [
         # Host-specific hardware and filesystem configurations

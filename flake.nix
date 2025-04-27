@@ -23,6 +23,7 @@
             inputs.nixpkgs.follows = "nixpkgs";
             inputs.nvchad-starter.follows = "nvim-config";
         };
+        swww.url = "github:LGFae/swww";
     };
 
     outputs =

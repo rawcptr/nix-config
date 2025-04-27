@@ -2,6 +2,7 @@
 
 let
     zen-browser = inputs.zen-browser.packages.${pkgs.system}.default;
+    swww = inputs.swww.packages.${pkgs.system}.default;
 in
 {
     home.packages = with pkgs; [
@@ -18,6 +19,9 @@ in
         # essentials
         zen-browser
         direnv
+        
+        # eye candy
+        swww 
 
         # Hardware & Montoring
         lm_sensors
