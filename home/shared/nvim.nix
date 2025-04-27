@@ -14,7 +14,7 @@
     # Add your NvChad customizations here using the options
     # Example:
     extraPackages = with pkgs; [ 
-      nil stylua 
+      nil stylua nixfmt-rfc-style
     ];
     # extraPlugins = ''
     #   return {
