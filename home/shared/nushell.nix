@@ -5,5 +5,5 @@
 	enable = true;
     };
     
-    # home.shell = pkgs.nushell;
+    # home.shell = pkgs.nushell; # enabling this causes error
 }
