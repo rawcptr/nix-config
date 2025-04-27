@@ -9,6 +9,7 @@
     # relative to the main flake.nix location (top level).
     ../../cachix/cuda-maintainers.nix
     ../../cachix/hyprland.nix
+    ../../cachix/nix-community.nix
 
     # Add any other caches needed ONLY for nixos-desktop here.
     # Example: ../../cachix/some-other-desktop-cache.nix

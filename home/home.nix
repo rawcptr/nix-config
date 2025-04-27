@@ -19,7 +19,6 @@ in
     # program config
     programs = {
         home-manager.enable = true;
-        rustup.enable = true;
 
 	      nvchad = {
 	          enable = true;
