@@ -17,17 +17,28 @@
     programs.nvchad = {
         enable = true;
 
-        # Add your NvChad customizations here using the options
-        # Example:
         extraPackages = with pkgs; [
-            nil
-            stylua
-            nixfmt-rfc-style
+            # Formatters
+            stylua # lua formatter
+            nixfmt-rfc-style # Nix (RFC Style fmt)
+
+            # LSPs
+            nixd # nix
+            # clangd # c/++
+            ruff # python
+            isort # python import sorter
         ];
-        # extraPlugins = ''
-        #   return {
-        #     {'folke/tokyonight.nvim', lazy = false, priority = 1000 },
-        #   }
-        # '';
+
+        extraPlugins = ''
+            return {
+                {  'mrcjkb/rustaceanvim', version = '^6', lazy = false },
+            }
+        '';
+
+        extraConfig = ''
+
+        '';
+
+        backup = false;
     };
 }
