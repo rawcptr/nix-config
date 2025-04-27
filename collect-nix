@@ -5,6 +5,7 @@ shopt -s globstar nullglob dotglob
 output_filename="collected-nix.md"
 
 if command -v tree &> /dev/null; then
+    echo '' > "$output_filename"
     echo '```' >> "$output_filename"
     tree >> "$output_filename"
     echo '```' >> "$output_filename"

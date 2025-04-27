@@ -4,7 +4,7 @@
   imports = [
     # Host-specific hardware and filesystem configurations
     ./hardware-configuration.nix
-    ./filesystem.nix # Note: filesystem.nix was the name you had
+    ./filesystems.nix 
 
     # Import all shared modules
     ../../modules/shared/core.nix     # defines stateVersion

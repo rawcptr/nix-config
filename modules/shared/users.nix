@@ -7,13 +7,8 @@
     isNormalUser = true;
     description = "enty";
     extraGroups = [ "networkmanager" "wheel" ]; # wheel for sudo access
-    packages = with pkgs; [
-      # You can add user-specific packages here if not using Home Manager
-      # Example: neofetch
-    ];
-    shell = pkgs.nushell; # set nushell as default shell
   };
 
   # Enable automatic login for the user.
-  services.getty.autologinUser = "nths";
+  services.getty.autologinUser = lib.mkIf (config.users.users ? nths) "nths";
 }

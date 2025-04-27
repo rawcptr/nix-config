@@ -44,14 +44,14 @@
         ./hosts/nixos-desktop/default.nix
 
         # === Optional: Add Home Manager module here ===
-         # home-manager.nixosModules.home-manager
-         # {
-         #   home-manager.useGlobalPkgs = true;
-         #   home-manager.useUserPackages = true;
-         #   # Adapt this path when you set up Home Manager config files
-         #   home-manager.users.nths = import ./home/user-nths.nix;
-         #   home-manager.extraSpecialArgs = specialArgs;
-         # }
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            # Adapt this path when you set up Home Manager config files
+            home-manager.users.nths = import ./home/home.nix;
+            home-manager.extraSpecialArgs = specialArgs;
+          }
       ];
     };
 
