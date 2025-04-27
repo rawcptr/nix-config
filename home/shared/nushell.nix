@@ -1,16 +1,14 @@
-{ pkgs, lib, ... }: 
+{ pkgs, lib, ... }:
 
 {
     programs.nushell = {
         enable = true;
 
         loginFile.text = ''
-        exec hyprland
+            exec hyprland
         '';
 
-        extraConfig = ''
-        '';
-
+        extraConfig = '''';
 
     };
     programs.starship = {
@@ -22,6 +20,6 @@
                 error_symbol = "[➜](bold red)";
             };
         };
-        };
+    };
     # home.shell = pkgs.nushell; # enabling this causes error
 }

@@ -8,10 +8,10 @@ in
         # terminals
         ghostty
 
-        # cli programs 
-        ripgrep 
-        tree 
-        fastfetch 
+        # cli programs
+        ripgrep
+        tree
+        fastfetch
         wl-clipboard
         starship
 
@@ -19,7 +19,7 @@ in
         zen-browser
         direnv
 
-        # Hardware & Montoring 
+        # Hardware & Montoring
         lm_sensors
     ];
 }

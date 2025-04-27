@@ -1,8 +1,14 @@
 # /etc/nixos/bootloader.nix
 # Defines bootloader settings.
-{ config, pkgs, lib, inputs, ... }:
+{
+    config,
+    pkgs,
+    lib,
+    inputs,
+    ...
+}:
 
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
 }

@@ -1,13 +1,20 @@
-{ pkgs, lib, config, inputs, system, ... }:
+{
+    pkgs,
+    lib,
+    config,
+    inputs,
+    system,
+    ...
+}:
 
-let 
+let
     username = "nths";
-in 
-{ 
+in
+{
     home.username = username;
-    home.homeDirectory = "/home/${username}"; 
-    home.stateVersion = "25.05"; 
-    
+    home.homeDirectory = "/home/${username}";
+    home.stateVersion = "25.05";
+
     imports = [
         ./shared/nushell.nix
         ./shared/packages.nix
