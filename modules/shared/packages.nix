@@ -12,6 +12,7 @@
     man-db # Provides man pages (man is often just a wrapper)
     git
     nushell # Make sure it's available system-wide too
+    unzip
 
     # Build Tools (Consider if needed globally or better in devShells)
     gcc
