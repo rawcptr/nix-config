@@ -1,9 +1,12 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
     programs.nushell = {
         enable = true;
         extraConfig = '''';
+        loginFile.text = if pkgs.stdenv.isLinux then ''
+            exec hyprland
+        '' else "";
     };
     programs.starship = {
         enable = true;
