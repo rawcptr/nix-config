@@ -13,9 +13,11 @@ in
         tree 
         fastfetch 
         wl-clipboard
+        starship
 
         # essentials
         zen-browser
+        direnv
 
         # Hardware & Montoring 
         lm_sensors

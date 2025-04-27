@@ -6,8 +6,6 @@ in
 { 
     home.username = username;
     home.homeDirectory = "/home/${username}"; 
-
-
     home.stateVersion = "25.05"; 
     
     imports = [
@@ -19,10 +17,9 @@ in
     # program config
     programs = {
         home-manager.enable = true;
-
-	      nvchad = {
-	          enable = true;
-	      };
+        nvchad = {
+            enable = true;
+        };
     };
 
     # xdg config
