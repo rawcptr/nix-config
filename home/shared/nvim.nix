@@ -18,6 +18,11 @@
         enable = true;
 
         extraPackages = with pkgs; [
+            # system
+            wl-clipboard
+            python3
+            gcc
+
             # Formatters
             stylua # lua formatter
             nixfmt-rfc-style # Nix (RFC Style fmt)
