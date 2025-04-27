@@ -20,7 +20,7 @@ in
 
     # nvim config
     home.file.".config/nvim" = {
-	source = ./shared/nvim-config;
+	source = inputs.nvim-config;
 	recursive = true;
 	force = true;
     };
