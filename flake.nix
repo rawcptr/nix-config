@@ -15,6 +15,7 @@
     }; 
     nvim-config = {
 	url = "github:NvChad/starter";
+	type = "source";
     };
     # Add nix-darwin input when ready
   };
