@@ -13,13 +13,13 @@
 
     # Add your NvChad customizations here using the options
     # Example:
-    # extraPackages = with pkgs; [ nil stylua ];
+    extraPackages = with pkgs; [ 
+      nil stylua 
+    ];
     # extraPlugins = ''
     #   return {
     #     {'folke/tokyonight.nvim', lazy = false, priority = 1000 },
     #   }
-    # '';
-    # extraConfig = ''
     # '';
   };
 }
