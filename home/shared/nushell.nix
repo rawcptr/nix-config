@@ -3,13 +3,7 @@
 {
     programs.nushell = {
         enable = true;
-
-        loginFile.text = ''
-            exec hyprland
-        '';
-
         extraConfig = '''';
-
     };
     programs.starship = {
         enable = true;

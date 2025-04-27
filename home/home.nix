@@ -12,6 +12,7 @@ in
         ./shared/nushell.nix
         ./shared/packages.nix
         ./shared/nvim.nix
+        ./nixos
     ];
 
     # program config
