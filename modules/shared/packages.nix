@@ -19,5 +19,6 @@
     clang
     llvm
     uv # Python packaging
+    rustup
   ];
 }
