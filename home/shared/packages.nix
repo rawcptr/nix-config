@@ -5,20 +5,19 @@ let
 in
 {
     home.packages = with pkgs; [
-	# terminals
-	ghostty
+        # terminals
+        ghostty
 
-	# cli programs
-	ripgrep
-	tree
-	fastfetch
-	wl-clipboard
-	
-	# essentials
-	zen-browser
+        # cli programs 
+        ripgrep 
+        tree 
+        fastfetch 
+        wl-clipboard
 
-	# Hardware & Montoring
-	lm_sensors
+        # essentials
+        zen-browser
 
+        # Hardware & Montoring 
+        lm_sensors
     ];
 }

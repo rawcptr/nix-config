@@ -13,14 +13,14 @@
         url = "github:youwen5/zen-browser-flake";
         inputs.nixpkgs.follows = "nixpkgs"; 
     }; 
-    nvim-config = {
-	url = "github:NvChad/starter";
-	type = "source";
+    nvchad4nix = {
+ 	url = "github:nix-community/nix4nvchad";
+	inputs.nixpkgs.follows = "nixpkgs";
     };
     # Add nix-darwin input when ready
   };
 
-  outputs = { self, nixpkgs, home-manager, nvim-config, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nvchad4nix, ... }@inputs:
   let
     # Define supported systems
     systems = ["x86_64-linux" /* , "aarch64-darwin" */ ];

@@ -11,24 +11,25 @@ in
     home.stateVersion = "25.05"; 
     
     imports = [
-	./shared/nushell.nix
-	./shared/packages.nix
+        ./shared/nushell.nix
+        ./shared/packages.nix
+        ./shared/nvim.nix
     ];
 
-    # basic config
-    programs.home-manager.enable = true;
+    # program config
+    programs = {
+        home-manager.enable = true;
+        rustup.enable = true;
 
-    # nvim config
-    home.file.".config/nvim" = {
-	source = inputs.nvim-config;
-	recursive = true;
-	force = true;
+	      nvchad = {
+	          enable = true;
+	      };
     };
 
     # xdg config
     xdg.enable = true;
     xdg.userDirs = {
-	enable = true;
-	createDirectories = true;
+        enable = true;
+        createDirectories = true;
     };
 }
