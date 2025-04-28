@@ -1,8 +1,8 @@
 { lib, pkgs, ... }:
 let
-    islinux = pkgs.stdenv.islinux;
+    isLinux = pkgs.stdenv.isLinux;
 in
-lib.mkIf islinux {
+lib.mkIf isLinux {
 
     xdg.configfile = {
         "./hypr/hyprland.conf" = {
