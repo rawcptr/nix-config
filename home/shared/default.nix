@@ -2,7 +2,7 @@
 {
     imports = [
         ./nushell.nix # nushell config
-        ./nvim.nix 
+        ./nvim.nix
         ./packages.nix
     ];
 

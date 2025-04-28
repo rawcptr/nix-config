@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ ... }:
 
 let
     username = "nths";
@@ -10,7 +10,7 @@ in
 
     imports = [
         ./shared
-        (lib.mkIf pkgs.stdenv.isLinux ./nixos)
+        ./nixos
     ];
 
     # program config
