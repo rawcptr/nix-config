@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, pkgs, ... }:
 
 let
     username = "nths";
@@ -10,15 +10,13 @@ in
 
     imports = [
         ./shared
-        ./nixos
+        (lib.mkIf pkgs.stdenv.isLinux ./nixos)
     ];
 
     # program config
     programs = {
         home-manager.enable = true;
-        nvchad = {
-            enable = true;
-        };
+        zoxide.enableNushellIntegration = true; 
     };
 
     # xdg config

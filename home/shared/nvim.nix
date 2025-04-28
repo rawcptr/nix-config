@@ -34,10 +34,7 @@
             }
         '';
 
-        extraConfig = ''
-
-        '';
-
+        extraConfig = "";
         backup = false;
     };
 }

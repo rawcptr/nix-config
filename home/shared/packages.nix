@@ -19,6 +19,7 @@ in
         # essentials
         zen-browser
         direnv
+        zoxide
         
         # eye candy
         swww 
