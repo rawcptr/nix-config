@@ -4,7 +4,7 @@ let
 in
 lib.mkIf isLinux {
 
-    xdg.configfile = {
+    xdg.configFile = {
         "./hypr/hyprland.conf" = {
             source = ./configs/hyprland.conf;
         };
