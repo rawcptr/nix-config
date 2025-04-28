@@ -2,4 +2,4 @@
 let
     isDarwin = pkgs.stdenv.isDarwin;
 in
-lib.mkif isDarwin { }
+lib.mkIf isDarwin { }

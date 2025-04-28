@@ -2,7 +2,7 @@
 let
     islinux = pkgs.stdenv.islinux;
 in
-lib.mkif islinux {
+lib.mkIf islinux {
 
     xdg.configfile = {
         "./hypr/hyprland.conf" = {
