@@ -6,9 +6,7 @@
     #     ./configs/hypr/hyprland.conf
     # ];
 
-    imports = [
-        ./hyprland.nix
-    ];
+    imports = [ ./hypr.nix ];
 
     # define more pkgs for ricing
     home.packages = with pkgs; [
