@@ -4,10 +4,13 @@ let
 in
 lib.mkIf isLinux {
 
+    # configPart = x: builtins.readFile x;
+    hyprlandConfigs = [
+        ./configs/hypr/hyprland.conf
+    ];
+
     xdg.configFile = {
-        "./hypr/hyprland.conf" = {
-            source = ./configs/hyprland.conf;
-        };
+        "./hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
     };
 
     # define more pkgs for ricing
@@ -17,6 +20,7 @@ lib.mkIf isLinux {
         dconf-editor
         swww
     ];
+
     home.pointerCursor = {
         enable = true;
         gtk.enable = true;
