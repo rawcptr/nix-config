@@ -4,3 +4,5 @@ alias nix-rebuild = sudo nixos-rebuild switch --flake ~/nix-config#nixos-desktop
 alias nix-test = sudo nixos-rebuild test --flake ~/nix-config#nixos-desktop
 
 alias update-flakes = nix flake update
+
+alias nix-clean = sudo nix-collect-garbage -d
