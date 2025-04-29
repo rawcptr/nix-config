@@ -1,21 +1,7 @@
 # /modules/nixos/graphical.nix
 # Configures Hyprland, Wayland, NVIDIA drivers, and related graphical settings.
+{ config, ... }:
 {
-    config,
-    pkgs,
-    inputs,
-    ...
-}:
-
-{
-    # Enable Hyprland Wayland compositor
-    programs.hyprland = {
-        enable = true;
-        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-        portalPackage =
-            inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-        xwayland.enable = true; # Enable XWayland support
-    };
 
     # Hint for electron apps to use Wayland backend
     environment.sessionVariables.NIXOS_OZONE_WL = "1";

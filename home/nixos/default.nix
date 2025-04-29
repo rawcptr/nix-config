@@ -5,13 +5,13 @@ in
 lib.mkIf isLinux {
 
     # configPart = x: builtins.readFile x;
-    hyprlandConfigs = [
-        ./configs/hypr/hyprland.conf
-    ];
+    # hyprlandConfigs = [
+    #     ./configs/hypr/hyprland.conf
+    # ];
 
-    xdg.configFile = {
-        "./hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
-    };
+    import = [
+        ./hyprland.nix
+    ];
 
     # define more pkgs for ricing
     home.packages = with pkgs; [

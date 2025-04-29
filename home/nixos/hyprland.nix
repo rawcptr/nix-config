@@ -1,7 +1,7 @@
-{ ... }:
+{ pkgs, inputs, ... }:
 {
-
     security.pam.services.hyprlock = { };
+
     programs.hyprlock = {
         enable = true;
         settings.general = {
@@ -32,9 +32,16 @@
         ];
     };
 
+    # Enable Hyprland Wayland compositor
     programs.hyprland = {
-        settings = {
+        enable = true;
+        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+        portalPackage =
+            inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+        xwayland.enable = true; # Enable XWayland support
+    };
 
-        };
+    xdg.configFile = {
+        "./hypr/hyprland.conf".source = ./configs/hypr/hyprland.conf;
     };
 }
