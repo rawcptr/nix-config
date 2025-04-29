@@ -9,7 +9,7 @@ lib.mkIf isLinux {
     #     ./configs/hypr/hyprland.conf
     # ];
 
-    import = [
+    imports = [
         ./hyprland.nix
     ];
 
