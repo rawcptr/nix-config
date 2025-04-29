@@ -15,7 +15,7 @@ in
             enable = true;
             settings = {
                 theme = "Belafonte Day";
-                font-size = 14;
+                font-size = 10;
             };
         };
     };
