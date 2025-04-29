@@ -28,11 +28,7 @@
             isort # python import sorter
         ];
 
-        extraPlugins = ''
-            return {
-                {  'mrcjkb/rustaceanvim', version = '^6', lazy = false },
-            }
-        '';
+        extraPlugins = builtins.readFile ./configs/nvim-plugins.lua;
 
         extraConfig = "";
         backup = false;

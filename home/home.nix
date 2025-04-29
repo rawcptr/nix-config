@@ -16,7 +16,6 @@ in
     # program config
     programs = {
         home-manager.enable = true;
-        zoxide.enableNushellIntegration = true; 
     };
 
     # xdg config

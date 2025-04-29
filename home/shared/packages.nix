@@ -2,27 +2,31 @@
 
 let
     zen-browser = inputs.zen-browser.packages.${pkgs.system}.default;
-    swww = inputs.swww.packages.${pkgs.system}.default;
 in
 {
-    home.packages = with pkgs; [
-        # terminals
-        ghostty
 
+    programs = {
+        ripgrep.enable = true;
+        direnv.enable = true;
+        fastfetch = {
+            enable = true;
+        };
+        ghostty = {
+            enable = true;
+            settings = {
+                theme = "Belafonte Day";
+                font-size = 14;
+            };
+        };
+    };
+
+    home.packages = with pkgs; [
         # cli programs
-        ripgrep
         tree
-        fastfetch
         wl-clipboard
-        starship
 
         # essentials
         zen-browser
-        direnv
-        zoxide
-        
-        # eye candy
-        swww 
 
         # Hardware & Montoring
         lm_sensors

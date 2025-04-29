@@ -1,6 +1,8 @@
 { pkgs, ... }:
 
 {
+    home.shell.enableNushellIntegration = true;
+
     programs.nushell = {
         enable = true;
         extraConfig = '''';
@@ -11,9 +13,16 @@
         };
 
         shellAliases = {
-            ls = "z";
+            cd = "z";
         };
     };
+
+    programs.zoxide = {
+        enable = true;
+        enableBashIntegration = true;
+        enableNushellIntegration = true;
+    };
+
     programs.starship = {
         enable = true;
         settings = {
