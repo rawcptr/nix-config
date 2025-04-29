@@ -10,13 +10,12 @@ lib.mkIf isLinux {
         };
     };
 
-    services.swww.enable = true;
-
     # define more pkgs for ricing
     home.packages = with pkgs; [
         grim
         slurp
         dconf-editor
+        swww
     ];
     home.pointerCursor = {
         enable = true;
