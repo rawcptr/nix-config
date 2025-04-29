@@ -1,6 +1,13 @@
-{ pkgs, inputs, ... }:
 {
-    security.pam.services.hyprlock = { };
+    lib,
+    pkgs,
+    inputs,
+    ...
+}:
+let
+    isLinux = pkgs.stdenv.isLinux;
+in
+lib.mkIf isLinux {
 
     programs.hyprlock = {
         enable = true;
@@ -35,9 +42,7 @@
     # Enable Hyprland Wayland compositor
     programs.hyprland = {
         enable = true;
-        package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-        portalPackage =
-            inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+        package = null;
         xwayland.enable = true; # Enable XWayland support
     };
 

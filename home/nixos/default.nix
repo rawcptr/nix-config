@@ -1,8 +1,5 @@
-{ lib, pkgs, ... }:
-let
-    isLinux = pkgs.stdenv.isLinux;
-in
-lib.mkIf isLinux {
+{ pkgs, ... }:
+{
 
     # configPart = x: builtins.readFile x;
     # hyprlandConfigs = [

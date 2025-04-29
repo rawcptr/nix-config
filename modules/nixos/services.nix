@@ -23,6 +23,9 @@
     # Start SSH agent.
     programs.ssh.startAgent = true;
 
+    # hyprlock services
+    security.pam.services.hyprlock = { };
+
     # Other services:
     # Enable CUPS to print documents.
     # services.printing.enable = true;
