@@ -290,9 +290,7 @@ lib.mkIf isLinux {
     # Ensure necessary packages for keybindings etc. are installed
     home.packages = with pkgs; [
         rofi # For the $menu bind
-        dolphin # For the $fileManager bind
-        # ghostty is already enabled via programs.ghostty
-        # zen-browser is already in home.packages
+        kdePackages.dolphin
         wl-clipboard # For wl-paste in exec-once
         cliphist # For wl-paste target in exec-once
         brightnessctl # For brightness keybinds
