@@ -66,7 +66,6 @@ lib.mkIf isLinux {
                 gaps_in = 5;
                 gaps_out = 20;
                 border_size = 2;
-                # https://wiki.hyprland.org/Configuring/Variables/#variable-types for info about colors
                 "col.active_border" = "0xFF52525B 45deg"; # Use quotes for gradient/complex colors
                 "col.inactive_border" = "0xFF27272A"; # Quotes recommended for colors
                 resize_on_border = false;
@@ -77,16 +76,15 @@ lib.mkIf isLinux {
             # https://wiki.hyprland.org/Configuring/Variables/#decoration
             decoration = {
                 rounding = 10;
-                # rounding_power seems deprecated, 'rounding' is just an int
 
                 active_opacity = 1.0;
                 inactive_opacity = 1.0;
 
-                drop_shadow = true; # Use drop_shadow instead of nested shadow block
-                shadow_range = 4;
-                shadow_render_power = 3;
-                "col.shadow" = "rgba(1a1a1aee)"; # Use quotes
-
+                # drop_shadow = true; # Use drop_shadow instead of nested shadow block
+                # shadow_range = 4;
+                # shadow_render_power = 3;
+                # "col.shadow" = "rgba(1a1a1aee)"; # Use quotes
+                #
                 blur = {
                     enabled = true;
                     size = 3;
@@ -294,10 +292,9 @@ lib.mkIf isLinux {
         wl-clipboard # For wl-paste in exec-once
         cliphist # For wl-paste target in exec-once
         brightnessctl # For brightness keybinds
-        wpctl # wireplumber control for volume keybinds (comes with pipewire usually)
         playerctl # For media keybinds
         swww # For wallpaper in exec-once
-        gnome.gnome-settings-daemon # Provides gsettings if not otherwise available
+        pkgs.gnome-settings-daemon
         libnotify # For notifications often used with keybinds or scripts
     ];
 

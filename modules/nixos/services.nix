@@ -11,13 +11,29 @@
         # flake = "/etc/nixos"; # Tell autoUpgrade to update the flake inputs
     };
 
-    # Enable the OpenSSH daemon.
-    services.openssh = {
-        enable = true;
-        # settings = {
-        #   PermitRootLogin = "no"; # Recommended security practice
-        #   PasswordAuthentication = false; # Recommended if using SSH keys
-        # };
+    hardware = {
+        pulseaudio.enable = false;
+        bluetooth.enable = true;
+        bluetooth.settings = {
+            General = {
+                Experimental = false;
+            };
+        };
+    };
+
+    services = {
+        openssh.enable = true;
+        blueman.enable = false;
+        kanata.enable = false;
+        nixseparatedebuginfod.enable = true;
+        pipewire = {
+            enable = true;
+            alsa.enable = true;
+            alsa.support32Bit = true;
+            pulse.enable = true;
+            wireplumber.enable = true;
+            jack.enable = false;
+        };
     };
 
     # Start SSH agent.
@@ -25,6 +41,7 @@
 
     # hyprlock services
     security.pam.services.hyprlock = { };
+    security.rtkit.enable = true; # Realtime scheduling for pipewire and pulseaudio
 
     # Other services:
     # Enable CUPS to print documents.
