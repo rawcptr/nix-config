@@ -408,11 +408,11 @@
     "nvim-config": {
       "flake": false,
       "locked": {
-        "lastModified": 1745854315,
-        "narHash": "sha256-s/cgOh60cyEgaSNDrFTtA/fdGoCGPf6O2Rx8Qo1F3Rs=",
+        "lastModified": 1746187499,
+        "narHash": "sha256-WyKLYWSmd0aa4K9DCVmDZjQ465tIVHjG7+DQFQdDB7g=",
         "owner": "rawcptr",
         "repo": "nvconfig",
-        "rev": "643981e4eb419428b6b805c8db5bb9a60ad3cac7",
+        "rev": "0f404486edf96ec29d9e0370e571c9d0cbebf3c2",
         "type": "github"
       },
       "original": {

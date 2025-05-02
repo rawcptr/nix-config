@@ -16,6 +16,8 @@ in
             settings = {
                 theme = "Belafonte Day";
                 font-size = 10;
+                window-padding-x = 4;
+                window-padding-y = 4;
             };
         };
     };
